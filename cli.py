@@ -6,15 +6,19 @@ import shoebox
 def init():
 	dir = os.getcwd()
 
-	if shoebox.is_repo(dir):
+	if shoebox.get_repo(dir):
 		print("Already in a repo: {}".format(dir))
 		return False
-	
+
+	repo = shoebox.Repository(dir)
+	repo.init_defaults()
+	repo.write_config()
 
 def status():
 	dir = os.getcwd()
+	repo = showbox.get_repo(dir)
 
-	if not shoebox.is_repo(dir):
+	if not repo:
 		print("You are not inside a shoebox repository.")
 		print("Use \"shoebox init\" to create one at {}".format(os.getcwd()))
 	else:
