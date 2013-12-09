@@ -15,7 +15,7 @@ def config_path(dir):
 
 class Repository:
 	format = "simple"
-	self.__tags = set()
+	__tags = set()
 
 	def __init__(self, dir):
 		self.dir = dir
@@ -46,7 +46,6 @@ class Repository:
 	@property
 	def config_path(self):
 		return config_path(self.dir)
-
 
 	@property
 	def tags(self):

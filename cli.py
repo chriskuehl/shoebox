@@ -16,7 +16,7 @@ def init():
 
 def status():
 	dir = os.getcwd()
-	repo = showbox.get_repo(dir)
+	repo = shoebox.get_repo(dir)
 
 	if not repo:
 		print("You are not inside a shoebox repository.")
